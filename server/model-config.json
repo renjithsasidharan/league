@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+   "Teams": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "Fixtures": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "Goals": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "Players": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "Points": {
+    "dataSource": "mydb",
+    "public": true
+  }
+}

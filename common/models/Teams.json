@@ -1,0 +1,29 @@
+{
+  "name": "Teams",
+  "options": {
+    "idInjection": false,
+    "mysql": {
+      "schema": "league",
+      "table": "teams"
+    },
+    "relations": {}
+  },
+  "properties": {
+    "name": {
+      "type": "String",
+      "required": true,
+      "length": 64,
+      "precision": null,
+      "scale": null,
+      "id": 1,
+      "mysql": {
+        "columnName": "NAME",
+        "dataType": "varchar",
+        "dataLength": 64,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    }
+  }
+}
