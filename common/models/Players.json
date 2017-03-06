@@ -4,7 +4,7 @@
     "idInjection": false,
     "mysql": {
       "schema": "league",
-      "table": "players"
+      "table": "player"
     },
     "relations": {
       "teams": {
@@ -15,7 +15,7 @@
     }
   },
   "properties": {
-    "playerId": {
+    "Id": {
       "type": "Number",
       "required": true,
       "length": null,
@@ -23,7 +23,7 @@
       "scale": 0,
       "id": 1,
       "mysql": {
-        "columnName": "PLAYER_ID",
+        "columnName": "ID",
         "dataType": "int",
         "dataLength": null,
         "dataPrecision": 10,

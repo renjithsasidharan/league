@@ -4,31 +4,35 @@
     "idInjection": false,
     "mysql": {
       "schema": "league",
-      "table": "fixtures"
+      "table": "fixture"
     },
     "relations": {
-      "teams": {
-        "model": "Teams",
-        "type": "belongsTo",
-        "foreignKey": "team2"
-      },
-      "points": {
-        "model": "Points",
-        "type": "belongsTo",
-        "foreignKey": "team2Points"
+
+    }
+  },
+  "mixins": {
+    "Import": {
+      "map": {
+        "team1": "TEAM_1",
+        "team2": "TEAM_2",
+        "fixtureDate": "FIXTURE_DATE",
+        "team1Score": "TEAM_1_SCORE",
+        "team2Score": "TEAM_2_SCORE",
+        "team1Points": "TEAM_1_POINTS",
+        "team2Points": "TEAM_2_POINTS"
       }
     }
   },
   "properties": {
-    "matchId": {
+    "Id": {
       "type": "Number",
-      "required": true,
+      "required": false,
       "length": null,
       "precision": 10,
       "scale": 0,
       "id": 1,
       "mysql": {
-        "columnName": "MATCH_ID",
+        "columnName": "ID",
         "dataType": "int",
         "dataLength": null,
         "dataPrecision": 10,

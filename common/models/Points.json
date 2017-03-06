@@ -4,7 +4,7 @@
     "idInjection": false,
     "mysql": {
       "schema": "league",
-      "table": "points"
+      "table": "point"
     },
     "relations": {}
   },

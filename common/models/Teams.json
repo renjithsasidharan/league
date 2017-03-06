@@ -1,10 +1,17 @@
 {
   "name": "Teams",
+  "mixins": {
+    "Import": {
+      "map": {
+        "name": "Name"
+      }
+    }
+  },
   "options": {
     "idInjection": false,
     "mysql": {
       "schema": "league",
-      "table": "teams"
+      "table": "team"
     },
     "relations": {}
   },
@@ -15,12 +22,27 @@
       "length": 64,
       "precision": null,
       "scale": null,
-      "id": 1,
       "mysql": {
         "columnName": "NAME",
         "dataType": "varchar",
         "dataLength": 64,
         "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "id": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": null,
+      "id": 1,
+      "mysql": {
+        "columnName": "ID",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
         "dataScale": null,
         "nullable": "N"
       }

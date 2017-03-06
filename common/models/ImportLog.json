@@ -1,0 +1,87 @@
+{
+  "name": "ImportLog",
+  "base": "PersistedModel",
+  "requried": true,
+  "options": {
+    "idInjection": false,
+    "mysql": {
+      "schema": "league",
+      "table": "IMPORT_LOG"
+    },
+    "relations": {}
+  },
+  "properties": {
+    "status": {
+      "type": "String",
+      "required": true,
+      "mysql": {
+        "columnName": "STATUS",
+        "dataType": "varchar",
+        "dataLength": 64,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "model": {
+      "type": "String",
+      "required": true,
+      "mysql": {
+        "columnName": "MODEL",
+        "dataType": "varchar",
+        "dataLength": 64,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "date": {
+      "type": "Date",
+      "required": true,
+      "mysql": {
+        "columnName": "DATE_TIME",
+        "dataType": "datetime",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "N"
+      }
+    },
+    "notices": {
+      "type": "String",
+      "required": false,
+      "mysql": {
+        "columnName": "NOTICES",
+        "dataType": "TEXT",
+        "dataLength": 1024,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "warnings": {
+      "type": "String",
+      "required": false,
+      "mysql": {
+        "columnName": "WARNINGS",
+        "dataType": "TEXT",
+        "dataLength": 1024,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    },
+    "errors": {
+      "type": "String",
+      "required": false,
+      "mysql": {
+        "columnName": "ERRORS",
+        "dataType": "TEXT",
+        "dataLength": 1024,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "Y"
+      }
+    }
+  }
+}

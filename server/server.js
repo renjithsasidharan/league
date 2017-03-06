@@ -12,6 +12,7 @@ var schedule = require('./routes/schedule');
 var topscorers = require('./routes/top-scorers');
 var contact = require('./routes/contact');
 var login = require('./routes/login');
+var upload = require('./routes/upload');
 
 //require('./autodiscover');
 
@@ -47,6 +48,7 @@ app.use('/top-scorers', topscorers);
 app.use('/schedule', schedule);
 app.use('/contact', contact);
 app.use('/login', login);
+app.use('/upload', upload);
 
 
 // catch 404 and forward to error handler

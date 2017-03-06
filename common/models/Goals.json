@@ -4,7 +4,7 @@
     "idInjection": false,
     "mysql": {
       "schema": "league",
-      "table": "goals"
+      "table": "goal"
     },
     "relations": {
       "fixtures": {
@@ -20,7 +20,7 @@
     }
   },
   "properties": {
-    "goalId": {
+    "Id": {
       "type": "Number",
       "required": true,
       "length": null,
@@ -28,7 +28,7 @@
       "scale": 0,
       "id": 1,
       "mysql": {
-        "columnName": "GOAL_ID",
+        "columnName": "ID",
         "dataType": "int",
         "dataLength": null,
         "dataPrecision": 10,

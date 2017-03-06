@@ -10,7 +10,8 @@
       "loopback/common/mixins",
       "loopback/server/mixins",
       "../common/mixins",
-      "./mixins"
+      "./mixins",
+      "../node_modules/loopback-import-mixin/dist"
     ]
   },
    "Teams": {
@@ -30,6 +31,14 @@
     "public": true
   },
   "Points": {
+    "dataSource": "mydb",
+    "public": true
+  },
+   "ImportContainer": {
+    "dataSource": "container",
+    "public": true
+  },
+  "ImportLog": {
     "dataSource": "mydb",
     "public": true
   }
