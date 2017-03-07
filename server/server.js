@@ -20,9 +20,7 @@ var app = module.exports = loopback();
 
 app.start = function() {
   // start the web server
-  var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8000;
-  var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
-  return app.listen(server_port, server_ip_address, function() {
+  return app.listen(function() {
     app.emit('started');
     var baseUrl = app.get('url').replace(/\/$/, '');
     console.log('Web server listening at: %s', baseUrl);
