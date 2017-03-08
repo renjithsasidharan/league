@@ -277,7 +277,7 @@ a {
 .slider-slick img {
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
+	object-fit: scale-down;
 }
 
 .slider-slick .caption {
@@ -298,6 +298,14 @@ a {
 	font-size: 28px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
+}
+
+.slider-slick .caption p {
+	overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 
 .slider-slick .slick-dots {
@@ -401,11 +409,11 @@ a {
 
 .latest-result .date li,
 .latest-match .date li {
-	
+
 }
 
 .latest-match .button {
-	margin-top: 15px;	
+	margin-top: 15px;
 }
 
 /*===================
@@ -420,7 +428,7 @@ a {
 }
 
 .latest-news .entry .content {
-	padding: 15px 10px 15px;	
+	padding: 15px 10px 15px;
 	border: 1px solid #eee;
 	border-top: 0;
 	display: inline-block;
@@ -525,11 +533,11 @@ a {
 }
 
 .result .entry .the-ul .date li {
-	
+
 }
 
 .latest-match .button {
-	margin-top: 15px;	
+	margin-top: 15px;
 }
 
 /*===================
@@ -618,11 +626,11 @@ a {
 }
 
 .schedule .entry .the-ul .date li {
-	
+
 }
 
 .schedule .button {
-	margin-top: 15px;	
+	margin-top: 15px;
 }
 
 /*===================
@@ -746,9 +754,9 @@ a {
 }
 
 .banner .banner1 {
-	background: 
+	background:
 	linear-gradient(
-      rgba(47, 40, 40, 0.27), 
+      rgba(47, 40, 40, 0.27),
       rgba(47, 40, 40, 0.27)
     ),
     url(../img/banner1.png);
@@ -756,9 +764,9 @@ a {
 }
 
 .banner .banner2 {
-	background: 
+	background:
 	linear-gradient(
-      rgba(47, 40, 40, 0.27), 
+      rgba(47, 40, 40, 0.27),
       rgba(47, 40, 40, 0.27)
     ),
     url(../img/banner2.png);
@@ -766,9 +774,9 @@ a {
 }
 
 .banner .banner3 {
-	background: 
+	background:
 	linear-gradient(
-      rgba(47, 40, 40, 0.27), 
+      rgba(47, 40, 40, 0.27),
       rgba(47, 40, 40, 0.27)
     ),
     url(../img/banner3.png);
@@ -776,9 +784,9 @@ a {
 }
 
 .banner .banner4 {
-	background: 
+	background:
 	linear-gradient(
-      rgba(47, 40, 40, 0.27), 
+      rgba(47, 40, 40, 0.27),
       rgba(47, 40, 40, 0.27)
     ),
     url(../img/banner4.png);
@@ -1129,7 +1137,7 @@ ul li {
 [type="radio"]:checked + label:after {
 	background: #41a85f;
 	border-color: #41a85f;
-} 
+}
 
 .checkout .payment-method h5 {
 	margin-bottom: 15px;
@@ -1184,7 +1192,7 @@ ul li {
 }
 
 .blog .entry .content {
-	padding: 15px 10px 15px;	
+	padding: 15px 10px 15px;
 	border: 1px solid #eee;
 	border-top: 0;
 	display: inline-block;
@@ -1350,13 +1358,13 @@ ul li {
 }
 
 .blog-single .post-comment .content {
-	
+
 }
 .blog-single .post-comment .content {
-	
+
 }
 .blog-single .post-comment .content {
-	
+
 }
 
 /*===================
@@ -1365,9 +1373,9 @@ ul li {
 form input[type="text"],
 form input[type="email"],
 form input[type="password"],
-form input[type="tel"], 
+form input[type="tel"],
 form input[type="number"] {
-	border: 1px solid #eee;	
+	border: 1px solid #eee;
 	height: 36px;
 	border-radius: 2px;
 	width: 100%;
@@ -1380,14 +1388,14 @@ form input:not([type]):focus:not([readonly]),
 form input[type="text"]:focus:not([readonly]),
 form input[type="email"]:focus:not([readonly]),
 form input[type="password"]:focus:not([readonly]),
-form input[type="tel"]:focus:not([readonly]), 
+form input[type="tel"]:focus:not([readonly]),
 form input[type="number"]:focus:not([readonly]) {
 	border-bottom: 1px solid #ddd;
 	box-shadow: none;
 }
 
 form textarea {
-	border: 1px solid #eee;	
+	border: 1px solid #eee;
 	border-radius: 2px;
 	width: 100%;
 	overflow: visible;
@@ -1405,20 +1413,20 @@ form textarea {
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #666;  
+   color: #666;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #666;  
+   color: #666;
 }
 
-:-ms-input-placeholder {  
-   color: #666;  
+:-ms-input-placeholder {
+   color: #666;
 }
 
 /*===================
 	login
-===================*/ 
+===================*/
 .login strong {
 	display: block;
 	position: relative;
@@ -1669,4 +1677,9 @@ footer .ft-bottom {
 	margin-top: 20px;
 	padding-top: 20px;
 	color: #999;
+}
+
+.intro .text {
+	line-height: 2;
+	white-space: pre-line;
 }

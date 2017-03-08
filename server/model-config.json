@@ -14,6 +14,34 @@
       "../node_modules/loopback-import-mixin/dist"
     ]
   },
+  "User": {
+    "dataSource": "mydb",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "mydb",
+    "public":  false
+  },
+  "ACL": {
+    "dataSource": "mydb",
+    "public":  false
+  },
+  "RoleMapping": {
+    "dataSource": "mydb",
+    "public":  false
+  },
+  "Role": {
+    "dataSource": "mydb",
+    "public":  false
+  },
+  "MyUser": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "UserIdentity": {
+    "dataSource": "mydb",
+    "public":  false
+  },
    "Teams": {
     "dataSource": "mydb",
     "public": true
@@ -36,7 +64,7 @@
   },
    "ImportContainer": {
     "dataSource": "container",
-    "public": true
+    "public": false
   },
   "ImportLog": {
     "dataSource": "mydb",

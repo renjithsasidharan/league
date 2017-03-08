@@ -1,0 +1,52 @@
+{
+  "name": "MyUser",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "admin": {
+    "defaultProperty": "email",
+    "listProperties": [
+      "email",
+      "username"
+    ],
+    "editProperties": [
+      "email",
+      "username",
+      "password"
+    ],
+    "includeRelations": [
+      "typetest",
+      "identities"
+    ]
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "identities": {
+      "type": "hasMany",
+      "model": "UserIdentity",
+      "foreignKey": "userId"
+    },
+    "typetest": {
+      "type": "hasOne",
+      "model": "TypeTest",
+      "foreignKey": "ownerId"
+    }
+  },
+  "acls": [{
+    "accessType": "EXECUTE",
+    "principalType": "ROLE",
+    "principalId": "$owner",
+    "permission": "ALLOW",
+    "property": "upload"
+  }, {
+    "accessType": "*",
+    "principalType": "ROLE",
+    "principalId": "admin",
+    "permission": "ALLOW",
+    "property": "*"
+  }],
+  "methods": {}
+}

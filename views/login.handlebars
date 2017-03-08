@@ -4,15 +4,37 @@
 		<div class="pages-title">
 			<h3>Login</h3>
 		</div>
+		<p class="red darken-3">{{errorMessage}}</p>
 		<form action="#">
-			<input type="email" placeholder="Email">
-			<input type="password" placeholder="password">
-			<div class="chebox">
-				<input type="checkbox" id="checkbox" />
-					<label for="checkbox">Remember me</label>
-			</div>
-			<button class="button">Login</button>
+			<input id="email" type="email" placeholder="Email">
+			<input id="password" type="password" placeholder="password">
+			<button id="loginBtn" class="button">Login</button>
 		</form>
 	</div>
 </div>
 <!-- end login -->
+<script type="text/javascript">
+	$(document).ready(function() {
+    document.getElementById('loginBtn').addEventListener('click', login, false);
+
+    function login(evt) {
+    	$('#loginBtn').prop('disabled', true);
+    	 $.ajax({
+          method: "POST",
+          url: "/login",
+          contentType: "application/json; charset=utf-8",
+          data: JSON.stringify({
+		   "email": $('#email').val(),
+		   "password": $('#password').val()
+		  })
+         })
+          .done(function( result ) {
+            console.log(result);
+            $('#loginBtn').prop('disabled', false);
+          }).fail(function(result) {
+            console.log(result);
+            $('#loginBtn').prop('disabled', false);
+          });
+    	}
+    });
+<{{!}}/script>

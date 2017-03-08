@@ -3,6 +3,9 @@
 var loopback = require('loopback');
 var boot = require('loopback-boot');
 var exphbs  = require('express-handlebars');
+var bodyParser = require('body-parser');
+var myContext = require('./middleware/context-myContext')();
+var getCurrentUserApi = require('./middleware/context-currentUserApi')();
 
 var logger = require("./utils/logger");
 var index = require('./routes/index');
@@ -13,6 +16,7 @@ var topscorers = require('./routes/top-scorers');
 var contact = require('./routes/contact');
 var login = require('./routes/login');
 var upload = require('./routes/upload');
+var intro = require('./routes/intro');
 
 //require('./autodiscover');
 
@@ -41,6 +45,27 @@ var logRequests = function(req, res, next) {
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
+// use loopback.context on all routes
+app.use(myContext);
+// put currentUser in loopback.context on /api routes
+app.use(getCurrentUserApi);
+// use loopback.token middleware on all routes
+// setup gear for authentication using cookie (access_token)
+// Note: requires cookie-parser (defined in middleware.json)
+app.use(loopback.token({
+  model: app.models.accessToken,
+  currentUserLiteral: 'me',
+  searchDefaultTokenKeys: false,
+  cookies: ['access_token'],
+  headers: ['access_token', 'X-Access-Token'],
+  params: ['access_token']
+}));
+
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(bodyParser.json());
+
 app.use('/', index);
 app.use('/standings', standings);
 app.use('/result', result);
@@ -49,6 +74,7 @@ app.use('/schedule', schedule);
 app.use('/contact', contact);
 app.use('/login', login);
 app.use('/upload', upload);
+app.use('/intro', intro);
 
 
 // catch 404 and forward to error handler
