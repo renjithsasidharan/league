@@ -7,7 +7,7 @@ module.exports = function () {
 		}
 
 		req.app.models.MyUser.findById(req.accessToken.userId, {
-			include: ['uploads', 'identities']
+			include: ['identities']
 		}, function (err, user) {
 
 			if (err) {

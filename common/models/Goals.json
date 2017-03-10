@@ -1,5 +1,5 @@
 {
-  "name": "Goals",
+  "name": "Goal",
   "options": {
     "idInjection": false,
     "mysql": {
@@ -7,22 +7,22 @@
       "table": "goal"
     },
     "relations": {
-      "fixtures": {
-        "model": "Fixtures",
+      "fixture": {
+        "model": "Fixture",
         "type": "belongsTo",
         "foreignKey": "matchId"
       },
-      "players": {
-        "model": "Players",
+      "player": {
+        "model": "Player",
         "type": "belongsTo",
         "foreignKey": "playerId"
       }
     }
   },
   "properties": {
-    "Id": {
+    "id": {
       "type": "Number",
-      "required": true,
+      "required": false,
       "length": null,
       "precision": 10,
       "scale": 0,

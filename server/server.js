@@ -4,6 +4,7 @@ var loopback = require('loopback');
 var boot = require('loopback-boot');
 var exphbs  = require('express-handlebars');
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser')
 var myContext = require('./middleware/context-myContext')();
 var getCurrentUserApi = require('./middleware/context-currentUserApi')();
 
@@ -14,7 +15,6 @@ var result = require('./routes/result');
 var schedule = require('./routes/schedule');
 var topscorers = require('./routes/top-scorers');
 var contact = require('./routes/contact');
-var login = require('./routes/login');
 var upload = require('./routes/upload');
 var intro = require('./routes/intro');
 
@@ -31,6 +31,7 @@ app.start = function() {
     if (app.get('loopback-component-explorer')) {
       var explorerPath = app.get('loopback-component-explorer').mountPath;
       console.log('Browse your REST API at %s%s', baseUrl, explorerPath);
+
     }
   });
 };
@@ -41,6 +42,7 @@ var logRequests = function(req, res, next) {
     next();
 }
 
+app.use(cookieParser('play3rscup'));
 //var router = app.loopback.Router();
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
@@ -52,6 +54,7 @@ app.use(getCurrentUserApi);
 // use loopback.token middleware on all routes
 // setup gear for authentication using cookie (access_token)
 // Note: requires cookie-parser (defined in middleware.json)
+// Only signed cookies work.
 app.use(loopback.token({
   model: app.models.accessToken,
   currentUserLiteral: 'me',
@@ -72,7 +75,6 @@ app.use('/result', result);
 app.use('/top-scorers', topscorers);
 app.use('/schedule', schedule);
 app.use('/contact', contact);
-app.use('/login', login);
 app.use('/upload', upload);
 app.use('/intro', intro);
 

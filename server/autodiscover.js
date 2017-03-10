@@ -3,7 +3,7 @@ var path = require('path');
 var fs = require('fs');
 var loopback = require('loopback');
 
-var outputPath = path.resolve(__dirname, '../common/models');
+var outputPath = path.resolve(__dirname, '../common/autodiscover-model');
 var ds = loopback.createDataSource('mysql', require('../server/datasources').mydb);
 
 ds.discoverModelDefinitions({ schema: 'league' }, function (err, models) {

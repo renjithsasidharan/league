@@ -1,20 +1,42 @@
 <!-- Upload -->
 <div class="result app-pages app-section">
     <div class="container">
-        <div id="dvImportSegments" class="fileupload ">
+    <div class="pages-title">
+            <h3>Upload data</h3>
+        </div>
+        <div id="dvImportSegments" class="fileupload">
             <fieldset>
-                <legend>Upload Teams</legend>
-                <form id="TeamForm" enctype="multipart/form-data" action="api/teams/import" method="post">
-                    <input type="file" name="file" id="teamFileUpload" accept=".csv" />
-                </form>
-                <input type="button" value="Submit" onclick="teamSubmit()"/>
+                <div class="line">
+                    <h5>Upload Teams</h5>
+                </div>
+                <div class="line">
+                    <form id="TeamForm" enctype="multipart/form-data" action="api/teams/import" method="post">
+                        <input type="file" name="file" id="teamFileUpload" accept=".csv" />
+                        <input class="right" type="button" value="Submit" onclick="teamSubmit()"/>
+                    </form>
+                </div>
             </fieldset>
             <fieldset>
-                <legend>Upload Fixtures</legend>
-                <form id="FixturesForm" enctype="multipart/form-data" action="api/fixtures/import" method="post">
-                    <input type="file" name="file" id="fixturesFileUpload" accept=".csv" />
-                </form>
-                <input type="button" value="Submit" onclick="fixtureSubmit()"/>
+                <div class="line">
+                    <h5>Upload Players</h5>
+                </div>
+                <div class="line">
+                    <form id="PlayersForm" enctype="multipart/form-data" action="api/players/import" method="post">
+                        <input type="file" name="file" id="playersFileUpload" accept=".csv" />
+                        <input class="right" type="button" value="Submit" onclick="playersSubmit()"/>
+                    </form>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="line">
+                    <h5>Upload Fixtures</h5>
+                </div>
+                <div class="line">
+                    <form id="FixturesForm" enctype="multipart/form-data" action="api/fixtures/import" method="post">
+                        <input type="file" name="file" id="fixturesFileUpload" accept=".csv" />
+                        <input class="right" type="button" value="Submit" onclick="fixtureSubmit()"/>
+                    </form>
+                </div>
             </fieldset>
         </div>
     </div>
@@ -23,59 +45,10 @@
     function teamSubmit() {
         document.getElementById("TeamForm").submit();
     };
+    function playersSubmit() {
+        document.getElementById("PlayersForm").submit();
+    };
     function fixtureSubmit() {
         document.getElementById("FixturesForm").submit();
     };
-    $(document).ready(function() {
-
-    // The event listener for the file upload
-    document.getElementById('teamFileUpload').addEventListener('change', upload, false);
-
-    // Method that checks that the browser supports the HTML5 File API
-    function browserSupportFileUpload() {
-        var isCompatible = false;
-        if (window.File && window.FileReader && window.FileList && window.Blob) {
-        isCompatible = true;
-        }
-        return isCompatible;
-    }
-
-    // Method that reads and processes the selected file
-    function upload(evt) {
-        if (!browserSupportFileUpload()) {
-            alert('The File APIs are not fully supported in this browser!');
-            } else {
-                var data = null;
-                var file = evt.target.files[0];
-                var reader = new FileReader();
-                reader.readAsText(file);
-                reader.onload = function(event) {
-                    var csvData = event.target.result;
-                    data = $.csv.toArrays(csvData);
-                    console.log(data);
-                    // $.ajax({
-                    //   method: "POST",
-                    //   url: "api/teams/import",
-                    //   headers: {
-                    //   },
-                    //   data: csvData
-                    // })
-                    //   .done(function( result ) {
-                    //     console.log(result);
-                    //   }).fail(function(result) {
-                    //     console.log(result);
-                    //   });
-                    // data = $.csv.toArrays(csvData);
-                    // if (data && data.length > 0) {
-                    // alert('Imported -' + data.length + '- rows successfully!');
-                    // } else {
-                    //     alert('No data to import!');
-                    // }
-                };
-                reader.onerror = function() {
-                    alert('Unable to read ' + file.fileName);
-                };
-            }
-        }
-    });
 <{{!}}/script>

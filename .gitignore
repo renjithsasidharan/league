@@ -60,3 +60,6 @@ typings/
 #credentials
 sql/schema.sql
 
+#Upload files
+tmp/
+

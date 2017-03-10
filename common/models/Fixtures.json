@@ -1,5 +1,5 @@
 {
-  "name": "Fixtures",
+  "name": "Fixture",
   "options": {
     "idInjection": false,
     "mysql": {
@@ -7,8 +7,28 @@
       "table": "fixture"
     },
     "relations": {
-
+      "Team 1": {
+        "model": "Team",
+        "type": "belongsTo",
+        "foreignKey": "team1"
+      },
+      "Team 2": {
+        "model": "Team",
+        "type": "belongsTo",
+        "foreignKey": "team2"
+      },
+      "Goals": {
+        "model": "Goal",
+        "type": "hasMany",
+        "foreignKey": "matchId"
+      }
     }
+  },
+  "admin": {
+    "defaultProperty": "id",
+    "listProperties": ["team1", "team2", "fixtureDate", "team1Score", "team2Score", "team1Points", "team2Points"],
+    "viewProperties": ["team1", "team2", "fixtureDate", "team1Score", "team2Score", "team1Points", "team2Points"],
+    "editProperties": ["team1", "team2", "fixtureDate", "team1Score", "team2Score", "team1Points", "team2Points"]
   },
   "mixins": {
     "Import": {
@@ -24,7 +44,7 @@
     }
   },
   "properties": {
-    "Id": {
+    "id": {
       "type": "Number",
       "required": false,
       "length": null,
@@ -98,6 +118,9 @@
         "dataPrecision": null,
         "dataScale": null,
         "nullable": "Y"
+      },
+      "admin":{
+        "inputType": "datetime"
       }
     },
     "team1Score": {
@@ -113,6 +136,11 @@
         "dataPrecision": 10,
         "dataScale": 0,
         "nullable": "Y"
+      },
+      "admin": {
+        "validate": {
+          "mask": "^\\d*$"
+        }
       }
     },
     "team2Score": {
@@ -128,6 +156,11 @@
         "dataPrecision": 10,
         "dataScale": 0,
         "nullable": "Y"
+      },
+      "admin": {
+        "validate": {
+          "mask": "^\\d*$"
+        }
       }
     },
     "team1Points": {
@@ -143,6 +176,11 @@
         "dataPrecision": 10,
         "dataScale": 0,
         "nullable": "Y"
+      },
+      "admin": {
+        "validate": {
+          "mask": "^(0|1|3)$"
+        }
       }
     },
     "team2Points": {
@@ -158,6 +196,11 @@
         "dataPrecision": 10,
         "dataScale": 0,
         "nullable": "Y"
+      },
+       "admin": {
+        "validate": {
+          "mask": "^(0|1|3)$"
+        }
       }
     }
   }

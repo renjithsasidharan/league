@@ -42,23 +42,19 @@
     "dataSource": "mydb",
     "public":  false
   },
-   "Teams": {
+   "Team": {
     "dataSource": "mydb",
     "public": true
   },
-  "Fixtures": {
+  "Fixture": {
     "dataSource": "mydb",
     "public": true
   },
-  "Goals": {
+  "Goal": {
     "dataSource": "mydb",
     "public": true
   },
-  "Players": {
-    "dataSource": "mydb",
-    "public": true
-  },
-  "Points": {
+  "Player": {
     "dataSource": "mydb",
     "public": true
   },

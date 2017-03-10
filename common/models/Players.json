@@ -1,5 +1,5 @@
 {
-  "name": "Players",
+  "name": "Player",
   "options": {
     "idInjection": false,
     "mysql": {
@@ -7,17 +7,32 @@
       "table": "player"
     },
     "relations": {
-      "teams": {
-        "model": "Teams",
+      "Team": {
+        "model": "Team",
         "type": "belongsTo",
         "foreignKey": "teamName"
       }
     }
   },
+  "mixins": {
+    "Import": {
+      "map": {
+        "name": "NAME",
+        "teamName": "TEAM_NAME",
+        "position": "POSITION"
+      }
+    }
+  },
+  "admin": {
+    "defaultProperty": "name",
+    "listProperties": ["name", "teamName", "position", "goalsScored"],
+    "viewProperties": ["name", "teamName", "position", "goalsScored"],
+    "editProperties": ["name", "teamName", "position", "goalsScored"]
+  },
   "properties": {
-    "Id": {
+    "id": {
       "type": "Number",
-      "required": true,
+      "required": false,
       "length": null,
       "precision": 10,
       "scale": 0,
@@ -46,34 +61,19 @@
         "nullable": "N"
       }
     },
-    "firstName": {
+    "name": {
       "type": "String",
       "required": true,
       "length": 64,
       "precision": null,
       "scale": null,
       "mysql": {
-        "columnName": "FIRST_NAME",
+        "columnName": "NAME",
         "dataType": "varchar",
         "dataLength": 64,
         "dataPrecision": null,
         "dataScale": null,
         "nullable": "N"
-      }
-    },
-    "lastName": {
-      "type": "String",
-      "required": false,
-      "length": 64,
-      "precision": null,
-      "scale": null,
-      "mysql": {
-        "columnName": "LAST_NAME",
-        "dataType": "varchar",
-        "dataLength": 64,
-        "dataPrecision": null,
-        "dataScale": null,
-        "nullable": "Y"
       }
     },
     "position": {
