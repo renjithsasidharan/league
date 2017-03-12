@@ -8,7 +8,7 @@
 		<div class="caption">
 			<div class="container">
 				<h2>Introducing Players Cup annual soccer league</h2>
-				<p>Players Cup is an annual soccer league introduced by a bunch of likeminded folks, from the corporate background, to create a platform for competitive, high quality football league. </p>
+				<p>Players Cup is an annual soccer league introduced by a bunch of likeminded folks, from the corporate background, to create a platform... </p>
 				<a id="introReadBtn" class="button" href="intro">Read More</a>
 			</div>
 		</div>
@@ -23,16 +23,18 @@
 			<h4>Latest Result</h4>
 			<div class="line"></div>
 		</div>
+		{{#each this.results}}
 		<ul class="club-title">
-			<li>Lorem FC</li>
-			<li>0</li>
-			<li>VS</li>
-			<li>2</li>
-			<li>Dolor FC</li>
+			<li>{{team1}}</li>
+			<li>{{team1Score}}</li>
+			<li>:</li>
+			<li>{{team2Score}}</li>
+			<li>{{team2}}</li>
 		</ul>
 		<ul class="date">
-			<li>Mon 15 Aug 2016 20:00</li>
+			<li>{{displayDate}}</li>
 		</ul>
+		{{/each}}
 	</div>
 </div>
 <!-- latest result -->
@@ -44,14 +46,16 @@
 			<h4>Latest Match</h4>
 			<div class="line"></div>
 		</div>
+		{{#each this.fixtures}}
 		<ul class="club-title">
-			<li>Lorem FC</li>
+			<li>{{team1}}</li>
 			<li>VS</li>
-			<li>Dolor FC</li>
+			<li>{{team2}}</li>
 		</ul>
 		<ul class="date">
-			<li>Sat 18 Dec 2017 21:00</li>
+			<li>{{displayDate}}</li>
 		</ul>
+		{{/each}}
 	</div>
 </div>
 <!-- latest match -->
@@ -63,7 +67,7 @@
 			<h4>Latest News</h4>
 			<div class="line"></div>
 		</div>
-		<div class="row">
+		<!-- <div class="row">
 			<div class="col s6">
 				<div class="entry">
 					<img src="img/news1.png" alt="">
@@ -107,7 +111,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 </div>
 <!-- end latest news -->
 

@@ -4,146 +4,42 @@
 		<div class="pages-title">
 			<h3>Result</h3>
 		</div>
-		<div class="head">
-			<ul>
-				<li class="prev"><i class="fa fa-angle-left"></i></li>
-				<li>Week 20</li>
-				<li class="next"><i class="fa fa-angle-right"></i></li>
-			</ul>
-		</div>
 		<div class="entry">
-			<ul class="the-ul">
-				<li>
-					<ul class="score">
-						<li><img src="img/club1.png" alt=""></li>
-						<li>0</li>
-						<li>:</li>
-						<li>2</li>
-						<li><img src="img/club2.png" alt=""></li>
-					</ul>
-					<ul class="club-title">
-						<li>Lorem FC</li>
-						<li>VS</li>
-						<li>Dolor FC</li>
-					</ul>
-					<ul class="stadium">
-						<li>Lorem Stadium</li>
-					</ul>
-					<ul class="date">
-						<li>Mon 15 Aug 2016 20:00</li>
-					</ul>
-				</li>
-			</ul>
-			<ul class="the-ul">
-				<li>
-					<ul class="score">
-						<li><img src="img/club3.png" alt=""></li>
-						<li>1</li>
-						<li>:</li>
-						<li>2</li>
-						<li><img src="img/club4.png" alt=""></li>
-					</ul>
-					<ul class="club-title">
-						<li>Lorem FC</li>
-						<li>VS</li>
-						<li>Dolor FC</li>
-					</ul>
-					<ul class="stadium">
-						<li>Lorem Stadium</li>
-					</ul>
-					<ul class="date">
-						<li>Mon 15 Aug 2016 20:00</li>
-					</ul>
-				</li>
-			</ul>
-			<ul class="the-ul">
-				<li>
-					<ul class="score">
-						<li><img src="img/club1.png" alt=""></li>
-						<li>0</li>
-						<li>:</li>
-						<li>0</li>
-						<li><img src="img/club2.png" alt=""></li>
-					</ul>
-					<ul class="club-title">
-						<li>Lorem FC</li>
-						<li>VS</li>
-						<li>Dolor FC</li>
-					</ul>
-					<ul class="stadium">
-						<li>Lorem Stadium</li>
-					</ul>
-					<ul class="date">
-						<li>Mon 15 Aug 2016 20:00</li>
-					</ul>
-				</li>
-			</ul>
-			<ul class="the-ul">
-				<li>
-					<ul class="score">
-						<li><img src="img/club3.png" alt=""></li>
-						<li>3</li>
-						<li>:</li>
-						<li>2</li>
-						<li><img src="img/club4.png" alt=""></li>
-					</ul>
-					<ul class="club-title">
-						<li>Lorem FC</li>
-						<li>VS</li>
-						<li>Dolor FC</li>
-					</ul>
-					<ul class="stadium">
-						<li>Lorem Stadium</li>
-					</ul>
-					<ul class="date">
-						<li>Mon 15 Aug 2016 20:00</li>
-					</ul>
-				</li>
-			</ul>
-			<ul class="the-ul">
-				<li>
-					<ul class="score">
-						<li><img src="img/club1.png" alt=""></li>
-						<li>0</li>
-						<li>:</li>
-						<li>2</li>
-						<li><img src="img/club2.png" alt=""></li>
-					</ul>
-					<ul class="club-title">
-						<li>Lorem FC</li>
-						<li>VS</li>
-						<li>Dolor FC</li>
-					</ul>
-					<ul class="stadium">
-						<li>Lorem Stadium</li>
-					</ul>
-					<ul class="date">
-						<li>Mon 15 Aug 2016 20:00</li>
-					</ul>
-				</li>
-			</ul>
-			<ul class="the-ul">
-				<li>
-					<ul class="score">
-						<li><img src="img/club3.png" alt=""></li>
-						<li>0</li>
-						<li>:</li>
-						<li>2</li>
-						<li><img src="img/club4.png" alt=""></li>
-					</ul>
-					<ul class="club-title">
-						<li>Lorem FC</li>
-						<li>VS</li>
-						<li>Dolor FC</li>
-					</ul>
-					<ul class="stadium">
-						<li>Lorem Stadium</li>
-					</ul>
-					<ul class="date">
-						<li>Mon 15 Aug 2016 20:00</li>
-					</ul>
-				</li>
-			</ul>
+			{{#each this.data}}
+            <span class="grey-text text-darken-4">{{moment @key "dddd D MMMM"}}</span>
+            	<div class="blue-grey darken-1">
+            	<ul class="collapsible" data-collapsible="accordion">
+                    {{#each this}}
+                        <li>
+                        <div class="collapsible-header blue-grey darken-1 white-text">
+                            <ul class="club-title">
+	                            <div class="row">
+	                          		<div class="col s6">{{team1}} {{team1Score}}</div>
+	                          		<div class="col s6">{{team2Score}} {{team2}}</div>
+	                          	</div>
+                            </ul>
+                          </div>
+                          <div class="collapsible-body grey lighten-5" style="display: none;">
+                          {{#gte team1Goals.length team2Goals.length}}
+                          	{{#forEach  team1Goals}}
+                          	<div class="row">
+                          		<div class="col s6">{{player.name}}  <i class="fa fa-futbol-o"></i></div>
+                          		<div class="col s6">{{#with (lookup ../team2Goals @index)}} {{#if player.name}} {{player.name}}  <i class="fa fa-futbol-o"></i> {{/if}} {{/with}}</div>
+                          	</div>
+                          	{{/forEach}}
+                          	{{else}}
+                          	{{#each  team2Goals}}
+                          	<div class="row">
+                          		<div class="col s6">{{#with (lookup ../team1Goals @index)}} {{#if player.name}} {{player.name}}  <i class="fa fa-futbol-o"></i> {{/if}} {{/with}}</div>
+                          		<div class="col s6"><i class="fa fa-futbol-o"></i>  {{player.name}}</div>
+                          	</div>
+                          	{{/each}}
+                          {{/gte}}
+                        </li>
+                    {{/each}}
+                    </ul>
+                </div>
+            {{/each}}
 		</div>
 	</div>
 </div>

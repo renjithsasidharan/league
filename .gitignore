@@ -61,5 +61,5 @@ typings/
 sql/schema.sql
 
 #Upload files
-tmp/
+/tmp
 

@@ -4,162 +4,41 @@
 		<div class="pages-title">
 			<h3>Top Scorers</h3>
 		</div>
-		<ul>
-			<li class="head">
+		<ul class="collection">
+			<li class="collection-item	blue-grey darken-1 white-text">
 				<div class="row">
 					<div class="col s1">
-						<div class="number">No</div>
+						<div class="number">#</div>
 					</div>
-					<div class="col s8">
-						<div class="number">Name</div>
-					</div><div class="col s3">
-						<div class="goals">Goals</div>
+					<div class="col s4">
+						<div class="name">Name</div>
+					</div>
+					<div class="col s4">
+						<div class="name">Team</div>
+					</div>
+					<div class="col s2">
+						<div class="number">Goals</div>
 					</div>
 				</div>
 			</li>
-			<li>
+			{{#each this.data}}
+			<li class="collection-item">
 				<div class="row">
 					<div class="col s1">
-						<div class="number">1</div>
+						<div class="number">{{sum @index 1}}</div>
 					</div>
-					<div class="col s8">
-						<div class="name">John Doe</div>
+					<div class="col s4">
+						<div class="name">{{name}}</div>
 					</div>
-					<div class="col s3">
-						<div class="goals">25</div>
+					<div class="col s4">
+						<div class="name">{{team}}</div>
+					</div>
+					<div class="col s2">
+						<div class="number">{{goals}}</div>
 					</div>
 				</div>
 			</li>
-			<li>
-				<div class="row">
-					<div class="col s1">
-						<div class="number">2</div>
-					</div>
-					<div class="col s8">
-						<div class="name">Vladimier</div>
-					</div>
-					<div class="col s3">
-						<div class="goals">18</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class="row">
-					<div class="col s1">
-						<div class="number">3</div>
-					</div>
-					<div class="col s8">
-						<div class="name">Jonathan Mensah</div>
-					</div>
-					<div class="col s3">
-						<div class="goals">17</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class="row">
-					<div class="col s1">
-						<div class="number">4</div>
-					</div>
-					<div class="col s8">
-						<div class="name">Andrew Doe</div>
-					</div>
-					<div class="col s3">
-						<div class="goals">14</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class="row">
-					<div class="col s1">
-						<div class="number">5</div>
-					</div>
-					<div class="col s8">
-						<div class="name">Vincent Jonathan</div>
-					</div>
-					<div class="col s3">
-						<div class="goals">13</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class="row">
-					<div class="col s1">
-						<div class="number">5</div>
-					</div>
-					<div class="col s8">
-						<div class="name">John Doe Edy</div>
-					</div>
-					<div class="col s3">
-						<div class="goals">10</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class="row">
-					<div class="col s1">
-						<div class="number">6</div>
-					</div>
-					<div class="col s8">
-						<div class="name">Diego Fabiano</div>
-					</div>
-					<div class="col s3">
-						<div class="goals">9</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class="row">
-					<div class="col s1">
-						<div class="number">7</div>
-					</div>
-					<div class="col s8">
-						<div class="name">Stevano Joe</div>
-					</div>
-					<div class="col s3">
-						<div class="goals">5</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class="row">
-					<div class="col s1">
-						<div class="number">8</div>
-					</div>
-					<div class="col s8">
-						<div class="name">John Doe Diego</div>
-					</div>
-					<div class="col s3">
-						<div class="goals">4</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class="row">
-					<div class="col s1">
-						<div class="number">9</div>
-					</div>
-					<div class="col s8">
-						<div class="name">John Doe</div>
-					</div>
-					<div class="col s3">
-						<div class="goals">4</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class="row">
-					<div class="col s1">
-						<div class="number">10</div>
-					</div>
-					<div class="col s8">
-						<div class="name">Diego John Doe</div>
-					</div>
-					<div class="col s3">
-						<div class="goals">4</div>
-					</div>
-				</div>
-			</li>
+			{{/each}}
 		</ul>
 	</div>
 </div>

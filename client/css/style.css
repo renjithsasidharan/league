@@ -383,6 +383,31 @@ a {
 	margin: 0;
 }
 
+
+.result .club-title li{
+	text-align: center;
+}
+
+.result .collapsible-body .row,
+.result .collapsible-header .row {
+	margin-bottom: 0px;
+}
+
+.result .collapsible-body .row div:nth-child(even),
+.result .collapsible-header .row div:nth-child(even) {
+	text-align: left;
+}
+.result .collapsible-body .row div:nth-child(odd),
+.result .collapsible-header .row div:nth-child(odd) {
+	text-align: right;
+}
+
+.result .collapsible-body {
+	padding: 8px;
+	color:#616161;
+	font-size: 12px;
+}
+
 .latest-result .club-title li,
 .latest-match .club-title li {
 	display: inline-block;
@@ -484,9 +509,9 @@ a {
 
 .result .entry .the-ul {
 	margin: 0;
-	padding: 20px 0;
+	padding: 8px 0;
 	text-align: center;
-	border-bottom: 1px solid #ddd;
+	/*border-bottom: 1px solid #ddd;*/
 }
 
 .result .entry .the-ul .score {
@@ -512,8 +537,8 @@ a {
 
 .result .entry .the-ul .club-title li {
 	display: inline-block;
-	margin: 20px 4px 0;
-	font-weight: bold;
+	margin: 0px 4px 0;
+	/*font-weight: bold;*/
 }
 
 .result .entry .the-ul .stadium,
@@ -577,9 +602,9 @@ a {
 
 .schedule .entry .the-ul {
 	margin: 0;
-	padding: 20px 0;
+	padding: 8px 0;
 	text-align: center;
-	border-bottom: 1px solid #ddd;
+	/*border-bottom: 1px solid #ddd;*/
 }
 
 .schedule .entry .the-ul .score {
@@ -605,8 +630,7 @@ a {
 
 .schedule .entry .the-ul .club-title li {
 	display: inline-block;
-	margin: 20px 4px 0;
-	font-weight: bold;
+	margin: 0px 4px 0;
 }
 
 .schedule .entry .the-ul .stadium,
@@ -633,6 +657,11 @@ a {
 	margin-top: 15px;
 }
 
+.schedule .collection .collection-item {
+	text-align: center;
+	white-space: pre-wrap;
+}
+
 /*===================
 	standings
 ===================*/
@@ -643,6 +672,10 @@ a {
 .standings ul {
 	padding: 0;
 	margin: 0;
+}
+
+.standings th {
+	border-radius: 0px;
 }
 
 .standings ul .head {
@@ -683,10 +716,6 @@ a {
 .top-scorers ul li {
 	padding: 8px 0 8px 10px;
 	border-bottom: 1px solid #ddd;
-}
-
-.top-scorers ul li .name {
-	font-weight: bold;
 }
 
 .top-scorers ul li .goals {
@@ -1602,7 +1631,7 @@ border-bottom: 2px solid #41a85f;
 	footer
 ===================*/
 footer {
-	background: #111;
+	background: #263238;
 	text-align: center;
 	padding: 40px 0;
 	display: block;
@@ -1659,7 +1688,7 @@ footer .tel-fax-mail ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	color: #bbb;
+	color: #e0e0e0;
 }
 
 footer .tel-fax-mail ul li {
@@ -1673,10 +1702,10 @@ footer .tel-fax-mail ul li span {
 }
 
 footer .ft-bottom {
-	border-top: 1px solid #222;
+	border-top: 1px solid #616161;
 	margin-top: 20px;
 	padding-top: 20px;
-	color: #999;
+	color: #bdbdbd ;
 }
 
 .intro .text {

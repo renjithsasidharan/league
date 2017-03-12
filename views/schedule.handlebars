@@ -1,23 +1,19 @@
-<!-- schedule -->
+<!--schedule -->
 <div class="schedule app-pages app-section">
-	<div class="container">
-		<div class="pages-title">
-			<h3>Schedule</h3>
-		</div>
-		<div class="entry">
-			<ul class="the-ul">
-				<li>
-					<ul class="club-title">
-						<li>Lorem FC</li>
-						<li>VS</li>
-						<li>Dolor FC</li>
-					</ul>
-					<ul class="date">
-						<li>Mon 15 Aug 2016 20:00</li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</div>
+    <div class="container">
+        <div class="pages-title">
+            <h3>Schedule</h3>
+        </div>
+        <div class="entry">
+            {{#each this.data}}
+            <div class="grey-text text-darken-4">{{moment @key "dddd D MMMM"}}</div>
+                    <ul class="collection blue-grey darken-1 white-text">
+                    	{{#each this}}
+                        	<li class="collection-item blue-grey darken-1">{{team1}}  {{fixtureTime}}  {{team2}}</li>
+                       	{{/each}}
+                    </ul>
+            {{/each}}
+        </div>
+    </div>
 </div>
-<!-- end schedule -->
+<!-- end schedule

@@ -2,9 +2,11 @@
 
 var loopback = require('loopback');
 var boot = require('loopback-boot');
-var exphbs  = require('express-handlebars');
+var exphbs = require('express-handlebars');
+var handlebars = require('handlebars');
+var helpers = handlebars.registerHelper('moment', require('helper-moment'));
 var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser')
+var cookieParser = require('cookie-parser');
 var myContext = require('./middleware/context-myContext')();
 var getCurrentUserApi = require('./middleware/context-currentUserApi')();
 
@@ -38,13 +40,16 @@ app.start = function() {
 
 // log all requests
 var logRequests = function(req, res, next) {
-    logger.info(req.method + " " + req.ip + " " + req.url);
-    next();
+  logger.info(req.method + " " + req.ip + " " + req.url);
+  next();
 }
 
 app.use(cookieParser('play3rscup'));
 //var router = app.loopback.Router();
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.engine('handlebars', exphbs({
+  defaultLayout: 'main',
+  helpers: helpers
+}));
 app.set('view engine', 'handlebars');
 
 // use loopback.context on all routes
@@ -70,6 +75,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.use('/', index);
+app.use('/index', index);
 app.use('/standings', standings);
 app.use('/result', result);
 app.use('/top-scorers', topscorers);
