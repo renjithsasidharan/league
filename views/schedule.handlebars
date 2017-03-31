@@ -7,11 +7,18 @@
         <div class="entry">
             {{#each this.data}}
             <div class="grey-text text-darken-4">{{moment @key "dddd D MMMM"}}</div>
-                    <ul class="collection blue-grey darken-1 white-text">
+                    <!-- <ul class="collection blue-grey darken-1 white-text">
                     	{{#each this}}
                         	<li class="collection-item blue-grey darken-1">{{team1}}  {{fixtureTime}}  {{team2}}</li>
                        	{{/each}}
-                    </ul>
+                    </ul> -->
+                    <div class="row blue-grey darken-1 white-text">
+                    {{#each this}}
+                        <div class="col s4 m5"><span class="right truncate">{{team1}}</span></div>
+                        <div class="col s4 m2 center"><span class="">{{fixtureTime}}</span></div>
+                        <div class="col s4 m5"><span class="left truncate">{{team2}}</span></div>
+                    {{/each}}
+                    </div>
             {{/each}}
         </div>
     </div>

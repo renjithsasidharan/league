@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
     }
     var groupedFixtures = _.groupBy(fixtures, function(item) {
         var fixtureDate = moment(item.fixtureDate);
-        item.fixtureTime = fixtureDate.format('h A');
+        item.fixtureTime = fixtureDate.format('h:mm A');
         return fixtureDate.format('YYYY MM DD');
     });
 
