@@ -35,7 +35,7 @@ router.get('/', function(req, res, next) {
           team2Score: { neq: null }
         }]
       },
-      order: 'fixtureDate ASC',
+      order: 'fixtureDate DESC',
     }, function(err, results) {
       if (err) {
         res.render('index', {
