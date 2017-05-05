@@ -535,6 +535,14 @@ a {
 	margin: 0;
 }
 
+.result .entry .club-title .col.s5{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
 .result .entry .the-ul .club-title li {
 	display: inline-block;
 	margin: 0px 4px 0;
@@ -728,6 +736,14 @@ a {
 
 .top-scorers ul li .goals {
 	text-align: center;
+}
+
+.top-scorers .collection-item .row .col {
+	overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
 }
 
 /*===================
@@ -1719,4 +1735,8 @@ footer .ft-bottom {
 .intro .text {
 	line-height: 2;
 	white-space: pre-line;
+}
+
+.number {
+	text-align: right;
 }
