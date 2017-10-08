@@ -19,6 +19,7 @@ var topscorers = require('./routes/top-scorers');
 var contact = require('./routes/contact');
 var upload = require('./routes/upload');
 var intro = require('./routes/intro');
+var gallery = require('./routes/gallery');
 
 //require('./autodiscover');
 
@@ -83,6 +84,7 @@ app.use('/schedule', schedule);
 app.use('/contact', contact);
 app.use('/upload', upload);
 app.use('/intro', intro);
+app.use('/gallery', gallery);
 
 
 // catch 404 and forward to error handler

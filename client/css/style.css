@@ -1740,3 +1740,21 @@ footer .ft-bottom {
 .number {
 	text-align: right;
 }
+
+.erb-image-wrapper{
+    max-width:90%;
+    height:auto;
+    position: relative;
+    display:block;
+    margin:0 auto;
+}
+
+.erb-image-wrapper img{
+    max-width:100% !important;
+    height:auto;
+    display:block;
+}
+
+.standard-padding {
+	padding: 8px;
+}
