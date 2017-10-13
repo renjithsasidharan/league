@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
   var app = req.app;
   var fixtureModel = app.models.Fixture;
   fixtureModel.find({
-    limit: 2,
+    limit: 4,
     where: {
       or: [{
         team1Score: null,
@@ -28,7 +28,7 @@ router.get('/', function(req, res, next) {
     });
 
     fixtureModel.find({
-      limit: 2,
+      limit: 4,
       where: {
         and: [{
           team1Score: { neq: null },
