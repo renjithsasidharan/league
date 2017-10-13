@@ -24,7 +24,7 @@ router.get('/', function(req, res, next) {
 
     _.forEach(fixtures, function(value, key) {
       var fixtureDate = moment(value.fixtureDate);
-      value.displayDate = fixtureDate.format('dddd D MMMM h A');
+      value.displayDate = fixtureDate.format('dddd D MMMM h:mm A');
     });
 
     fixtureModel.find({
